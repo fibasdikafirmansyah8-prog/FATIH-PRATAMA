@@ -1,94 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jadwal Harian Fatih</title>
+
 <style>
-/* ===== GLOBAL ===== */
+:root {
+  --blue: #0d47a1;
+  --light: #e3f2fd;
+}
+
 body {
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f4f8fc;
-  color: #1f2d3d;
   margin: 0;
-  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
 }
 
-/* ===== TITLE ===== */
-.schedule-title {
+header {
   text-align: center;
-  font-size: 36px; /* DIBESARKAN */
-  font-weight: 800;
-  color: #0a3d91;
-  margin: 20px 0 5px 0;
+  padding: 25px 10px;
 }
 
-.schedule-subtitle {
+header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+header p {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.swipe-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  flex: 0 0 85%;
+  background: white;
+  color: #0d47a1;
+  border-radius: 20px;
+  padding: 25px;
+  scroll-snap-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #0d47a1;
+  padding-bottom: 10px;
+}
+
+.card p {
+  font-size: 1.4rem;
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+footer {
   text-align: center;
-  font-size: 18px; /* DIBESARKAN */
-  font-style: italic;
-  color: #4a6fa5;
-  margin-bottom: 25px;
-}
-
-/* ===== ORNAMENT ===== */
-.philosophy-ornament {
-  text-align: center;
-  font-size: 24px; /* DIBESARKAN */
-  color: #0a3d91;
-  margin-bottom: 20px;
-}
-
-/* ===== TABLE ===== */
-.schedule-table {
-  width: 100vw;               /* PENUH LAYAR */
-  max-width: 100%;
-  border-collapse: collapse;
-  background: #ffffff;
-}
-
-.schedule-table thead {
-  background: linear-gradient(135deg, #0a3d91, #1e6bd6);
-  color: #ffffff;
-}
-
-.schedule-table th {
-  padding: 18px;
-  font-size: 20px;            /* HEADER BESAR */
-  text-align: center;
-}
-
-.schedule-table td {
-  padding: 20px 16px;         /* BARIS TINGGI */
-  font-size: 20px;            /* ISI BESAR */
-}
-
-.schedule-table tbody tr {
-  border-bottom: 2px solid #e3ebf5;
-}
-
-.schedule-table tbody tr:hover {
-  background-color: #f0f6ff;
-}
-
-.schedule-table strong {
-  color: #0a3d91;
-  font-weight: 700;
-}
-
-/* ===== FOOTER ===== */
-.schedule-footer {
-  margin: 30px 10px;
-  text-align: center;
-  font-size: 16px;
-  color: #4a6fa5;
-  font-style: italic;
-}
-
-/* ===== MOBILE EXTRA BESAR ===== */
-@media (max-width: 768px) {
-  .schedule-title {
-    font-size: 32px;
-  }
-
-  .schedule-table th,
-  .schedule-table td {
-    font-size: 22px;          /* MOBILE LEBIH BESAR */
-    padding: 22px 14px;
-  }
+  padding: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📘 Jadwal Harian Fatih</h1>
+  <p>Geser ke kiri 👉 untuk melihat pelajaran</p>
+</header>
+
+<div class="swipe-container">
+
+  <div class="card">
+    <h2>🌅 Pagi</h2>
+    <p class="time">04.30 – 09.13</p>
+    <p>Membantu Orang Tua</p>
+  </div>
+
+  <div class="card">
+    <h2>📖 Bahasa Arab</h2>
+    <p class="time">09.30 – 10.45</p>
+    <p>Qawā‘id & Mufradāt</p>
+  </div>
+
+  <div class="card">
+    <h2>📚 Ilmu Tafsir</h2>
+    <p class="time">11.00 – 12.15</p>
+    <p>Tafsir Tematik</p>
+  </div>
+
+  <div class="card">
+    <h2>📜 Ilmu Hadits</h2>
+    <p class="time">13.00 – 14.45</p>
+    <p>Musthalah & Sanad</p>
+  </div>
+
+  <div class="card">
+    <h2>⚖ Ushul Fiqh</h2>
+    <p class="time">15.00 – 16.15</p>
+    <p>Qiyās & Dalil Syar‘i</p>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Filsafat</h2>
+    <p class="time">19.00 – 20.30</p>
+    <p>Logika & Epistemologi</p>
+  </div>
+
+  <div class="card">
+    <h2>🔁 Murāja‘ah</h2>
+    <p class="time">20.30 – 21.30</p>
+    <p>Review & Catatan</p>
+  </div>
+
+</div>
+
+<footer>
+  “Ilmu adalah cahaya” ✨
+</footer>
+
+</body>
+</html>
